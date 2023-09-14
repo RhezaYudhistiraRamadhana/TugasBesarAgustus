@@ -29,24 +29,27 @@ uses crt;
                      write(gajitotal:4:2);
                     end
                 
-                else
-                    if (gajiawalz <= 3500000) and (tahunz > 5) then
-                        begin
-                         writeln('Pajak                                  : 0');
-                         writeln('===============================================================================');
-                         write('Total gaji bersih yang akan didapatkan oleh ', nama, ' adalah Rp. ');
-                         gajitotal:=gajiawalz;
-                         write(gajitotal:4:2);
-                        end
+                else if (gajiawalz <= 3500000) and (tahunz > 5) then
+                    begin
+                     writeln('Pajak                                  : 0');
+                     writeln('===============================================================================');
+                     write('Total gaji bersih yang akan didapatkan oleh ', nama, ' adalah Rp. ');
+                     gajitotal:=gajiawalz;
+                     write(gajitotal:4:2);
+                    end
                 
+                else if (tahunz < 5) then 
+                    begin
+                     writeln('Pajak                                  : 0');
+                     writeln('===============================================================================');
+                     write('Total gaji bersih yang akan didapatkan oleh ', nama, ' adalah Rp. ');
+                     gajitotal:=gajiawalz;
+                     write(gajitotal:4:2);
+                    end
+                        
                 else
-                    if (tahunz < 5) then 
-                        begin
-                         writeln('Pajak                                  : 0');
-                         writeln('===============================================================================');
-                         write('Total gaji bersih yang akan didapatkan oleh ', nama, ' adalah Rp. ');
-                         gajitotal:=gajiawalz;
-                         write(gajitotal:4:2);
-                        end;
-                    
+                    begin
+                     writeln('Error');
+                    end;
 end.
+
